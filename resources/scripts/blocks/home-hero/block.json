@@ -1,0 +1,13 @@
+{
+  "apiVersion": 2,
+  "name": "sage/home-hero",
+  "title": "Home Hero",
+  "category": "layout",
+  "icon": "cover-image",
+  "editorScript": "editor",
+  "attributes": {
+    "heading": { "type": "string", "source": "html", "selector": "h1" },
+    "subheading": { "type": "string", "source": "html", "selector": "p" },
+    "motif": { "type": "string", "default": "" }
+  }
+}

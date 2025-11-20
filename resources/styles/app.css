@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Set Inter as default body font */
+  body {
+    @apply font-inter text-text bg-cream;
+    font-optical-sizing: auto;
+    background-image: url('../images/Handmade Paper 1.png');
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-inter font-bold uppercase text-text;
+    letter-spacing: 0.13em;
+  }
+
+  h1 {
+    @apply text-6xl;
+  }
+
+  h2 {
+    @apply text-5xl;
+  }
+
+  h3 {
+    @apply text-4xl;
+  }
+
+  h4 {
+    @apply text-3xl;
+  }
+
+  h5 {
+    @apply text-2xl;
+  }
+
+  h6 {
+    @apply text-xl;
+  }
+
+  /* Links */
+  a {
+    @apply text-primary transition-colors duration-300;
+  }
+
+  a:hover {
+    @apply text-red-dark;
+  }
+
+  /* Paragraphs */
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+}
+
+@layer components {
+  /* WordPress Core Blocks */
+  
+  /* Container blocks */
+  .wp-block-group,
+  .wp-block-cover {
+    @apply max-w-screen-xl mx-auto;
+  }
+
+  /* Headings */
+  .wp-block-heading {
+    @apply max-w-screen-xl mx-auto font-bold uppercase;
+    letter-spacing: 0.13em;
+  }
+
+  /* Paragraph */
+  .wp-block-paragraph {
+    @apply max-w-screen-xl mx-auto;
+  }
+
+  /* Image */
+  .wp-block-image {
+    @apply max-w-screen-xl mx-auto mb-8;
+  }
+
+  .wp-block-image img {
+    @apply w-full h-auto;
+  }
+
+  .wp-block-image figcaption {
+    @apply text-sm text-gray-medium mt-2 text-center;
+  }
+
+  /* Separator */
+  .wp-block-separator {
+    @apply max-w-screen-xl mx-auto border-0 border-t-2 border-primary my-8;
+  }
+
+  .wp-block-separator.is-style-wide {
+    @apply w-full;
+  }
+
+  .wp-block-separator.is-style-dots {
+    @apply border-0;
+  }
+
+  /* Columns */
+  .wp-block-columns {
+    @apply max-w-screen-xl mx-auto flex flex-wrap gap-8;
+  }
+
+  .wp-block-column {
+    @apply flex-1 min-w-0;
+  }
+
+  /* Buttons */
+  .wp-block-button__link {
+    @apply inline-block px-8 py-3 bg-primary text-white font-semibold uppercase transition-colors duration-300 no-underline;
+  }
+
+  .wp-block-button__link:hover {
+    @apply bg-red-dark;
+  }
+
+  .wp-block-button.is-style-outline .wp-block-button__link {
+    @apply bg-transparent border-2 border-primary text-primary;
+  }
+
+  .wp-block-button.is-style-outline .wp-block-button__link:hover {
+    @apply bg-primary text-white;
+  }
+
+  /* Quote */
+  .wp-block-quote {
+    @apply max-w-screen-xl mx-auto border-l-4 border-primary pl-6 py-4 my-8 italic;
+  }
+
+  .wp-block-quote cite {
+    @apply block mt-4 text-sm text-gray-medium not-italic;
+  }
+
+  .wp-block-pullquote {
+    @apply max-w-screen-xl mx-auto border-t-4 border-b-4 border-primary py-8 my-12 text-center;
+  }
+
+  .wp-block-pullquote blockquote {
+    @apply text-3xl font-bold;
+  }
+
+  /* List */
+  .wp-block-list {
+    @apply max-w-screen-xl mx-auto pl-6 mb-6;
+  }
+
+  .wp-block-list li {
+    @apply mb-2;
+  }
+
+  /* Code */
+  .wp-block-code {
+    @apply max-w-screen-xl mx-auto bg-gray-light p-4 rounded font-mono text-sm overflow-x-auto;
+  }
+
+  .wp-block-preformatted {
+    @apply max-w-screen-xl mx-auto bg-gray-light p-4 font-mono text-sm overflow-x-auto;
+  }
+
+  /* Table */
+  .wp-block-table {
+    @apply max-w-screen-xl mx-auto mb-8 overflow-x-auto;
+  }
+
+  .wp-block-table table {
+    @apply w-full border-collapse;
+  }
+
+  .wp-block-table th {
+    @apply bg-primary text-white font-bold p-3 text-left uppercase;
+  }
+
+  .wp-block-table td {
+    @apply border border-gray-light p-3;
+  }
+
+  .wp-block-table tr:nth-child(even) {
+    @apply bg-gray-light;
+  }
+
+  /* Gallery */
+  .wp-block-gallery {
+    @apply max-w-screen-xl mx-auto grid gap-4 mb-8;
+  }
+
+  .wp-block-gallery.columns-2 {
+    @apply grid-cols-2;
+  }
+
+  .wp-block-gallery.columns-3 {
+    @apply grid-cols-3;
+  }
+
+  .wp-block-gallery.columns-4 {
+    @apply grid-cols-4;
+  }
+
+  /* Media & Text */
+  .wp-block-media-text {
+    @apply max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-8;
+  }
+
+  /* Cover */
+  .wp-block-cover {
+    @apply relative min-h-[400px] flex items-center justify-center text-white mb-8;
+  }
+
+  .wp-block-cover__inner-container {
+    @apply relative z-10 text-center px-8;
+  }
+
+  /* Spacer */
+  .wp-block-spacer {
+    @apply block;
+  }
+
+  /* Embed */
+  .wp-block-embed {
+    @apply max-w-screen-xl mx-auto mb-8;
+  }
+
+  .wp-block-embed iframe {
+    @apply w-full aspect-video;
+  }
+
+  /* File */
+  .wp-block-file {
+    @apply max-w-screen-xl mx-auto mb-6 flex items-center gap-4;
+  }
+
+  .wp-block-file__button {
+    @apply px-6 py-2 bg-primary text-white font-semibold uppercase transition-colors duration-300;
+  }
+
+  .wp-block-file__button:hover {
+    @apply bg-red-dark;
+  }
+
+  /* Search */
+  .wp-block-search {
+    @apply max-w-screen-xl mx-auto mb-6;
+  }
+
+  .wp-block-search__input {
+    @apply px-4 py-2 border border-gray-medium rounded-l;
+  }
+
+  .wp-block-search__button {
+    @apply px-6 py-2 bg-primary text-white font-semibold uppercase rounded-r;
+  }
+
+  /* Navigation */
+  .wp-block-navigation {
+    @apply max-w-screen-xl mx-auto;
+  }
+
+  .wp-block-navigation-item a {
+    @apply text-text font-medium uppercase transition-colors duration-300;
+  }
+
+  .wp-block-navigation-item a:hover {
+    @apply text-primary;
+  }
+}
+
+/* Custom Navigation Styles */
+.menu-main-container {
+  @apply flex flex-row w-full;
+}
+
+.menu-main-container ul {
+  @apply flex flex-row gap-14;
+}
+
+.menu-main-container ul li a:hover:after {
+  content: '';
+  @apply block w-[52%] h-[3px] bg-black mt-2 transition-all duration-300;
+}
+
+.menu-main-container ul li.current_page_item a:after {
+  content: '';
+  @apply block w-[52%] h-[3px] bg-black mt-2;
+}
+
+.menu-main-container ul li a {
+  @apply no-underline text-black text-lg font-medium uppercase;
+}
+
+.menu-main-container ul li a:after {
+  content: '';
+  @apply block w-0 h-[3px] bg-black mt-2 transition-all duration-300;
+}
+
+.nav-primary {
+  @apply w-auto flex min-w-[500px] pt-24;
+}
+
+footer {
+  @apply max-w-screen-xl mx-auto py-12;
+}

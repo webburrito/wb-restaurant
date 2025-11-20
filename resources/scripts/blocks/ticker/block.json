@@ -1,0 +1,22 @@
+{
+  "apiVersion": 2,
+  "name": "sage/ticker",
+  "title": "Ticker",
+  "category": "layout",
+  "icon": "text",
+  "editorScript": "editor",
+  "attributes": {
+    "text1": { 
+      "type": "string", 
+      "source": "html", 
+      "selector": ".ticker__text-1",
+      "default": ""
+    },
+    "text2": { 
+      "type": "string", 
+      "source": "html", 
+      "selector": ".ticker__text-2",
+      "default": ""
+    }
+  }
+}

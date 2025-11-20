@@ -1,0 +1,53 @@
+/* Ticker Block Styles */
+.ticker {
+  color: #fff;
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  will-change: transform;
+}
+
+.ticker__container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ticker__track {
+  display: inline-flex;
+  gap: 60px;
+  align-items: center;
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.ticker__text {
+    font-size: 81px;
+    font-weight: 800;
+    text-transform: uppercase;
+    @apply text-secondary;
+    letter-spacing: 13%;
+    white-space: nowrap;
+    
+    &.ticker__text-2 {
+        @apply text-primary;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ticker__text {
+    font-size: 14px;
+  }
+  
+  .ticker__track {
+    gap: 40px;
+  }
+  
+  .ticker__text:not(:last-child) {
+    margin-right: 40px;
+  }
+}
