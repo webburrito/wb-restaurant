@@ -11,6 +11,14 @@
   "scripts": {
     "dev": "bud dev",
     "build": "bud build",
+    "test": "vitest",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:coverage": "vitest run --coverage",
+    "test:accessibility": "playwright test tests/e2e/accessibility.spec.js",
+    "test:visual": "playwright test tests/e2e/visual-regression.spec.js",
+    "test:performance": "playwright test tests/e2e/performance.spec.js",
     "translate": "npm run translate:pot && npm run translate:update",
     "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"theme.json,patterns,app,resources\"",
     "translate:update": "for file in ./resources/lang/*.po; do wp i18n update-po ./resources/lang/sage.pot $file; done",
@@ -19,10 +27,17 @@
     "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.56.1",
     "@roots/bud": "6.20.0",
     "@roots/bud-sass": "^6.24.0",
     "@roots/bud-tailwindcss": "6.20.0",
-    "@roots/sage": "6.20.0"
+    "@roots/sage": "6.20.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "@wordpress/scripts": "^31.0.0",
+    "lighthousebot": "^1.0.0",
+    "vitest": "^4.0.12"
   },
   "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4",
   "dependencies": {
