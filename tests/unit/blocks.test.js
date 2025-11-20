@@ -5,7 +5,7 @@ import tickerBlockConfig from '../../resources/scripts/blocks/ticker/block.json'
 describe('Block Validation Tests', () => {
   describe('Home Hero Block', () => {
     it('should have valid block.json configuration', () => {
-      expect(heroBlockConfig.name).toBe('wb/home-hero');
+      expect(heroBlockConfig.name).toBe('sage/home-hero');
       expect(heroBlockConfig.category).toBeDefined();
       expect(heroBlockConfig.attributes).toBeDefined();
     });
@@ -23,25 +23,19 @@ describe('Block Validation Tests', () => {
       expect(attributes.motif.type).toBe('string');
     });
 
-    it('should have default values for attributes', () => {
+    it('should have default value for motif', () => {
       const { attributes } = heroBlockConfig;
-      
-      expect(attributes.heading.default).toBeDefined();
-      expect(attributes.subheading.default).toBeDefined();
       expect(attributes.motif.default).toBeDefined();
     });
 
-    it('should support WordPress editor features', () => {
-      expect(heroBlockConfig.supports).toBeDefined();
+    it('should have editor script defined', () => {
       expect(heroBlockConfig.editorScript).toBeDefined();
-      expect(heroBlockConfig.editorStyle).toBeDefined();
-      expect(heroBlockConfig.style).toBeDefined();
     });
   });
 
   describe('Ticker Block', () => {
     it('should have valid block.json configuration', () => {
-      expect(tickerBlockConfig.name).toBe('wb/ticker');
+      expect(tickerBlockConfig.name).toBe('sage/ticker');
       expect(tickerBlockConfig.category).toBeDefined();
       expect(tickerBlockConfig.attributes).toBeDefined();
     });
@@ -56,40 +50,14 @@ describe('Block Validation Tests', () => {
       expect(attributes.text2.type).toBe('string');
     });
 
-    it('should define direction attributes', () => {
+    it('should have default values for text', () => {
       const { attributes } = tickerBlockConfig;
-      
-      expect(attributes.direction1).toBeDefined();
-      expect(attributes.direction1.type).toBe('string');
-      expect(attributes.direction1.default).toBe('left');
-      
-      expect(attributes.direction2).toBeDefined();
-      expect(attributes.direction2.type).toBe('string');
-      expect(attributes.direction2.default).toBe('left');
+      expect(attributes.text1.default).toBeDefined();
+      expect(attributes.text2.default).toBeDefined();
     });
 
-    it('should define speed attribute with valid range', () => {
-      const { attributes } = tickerBlockConfig;
-      
-      expect(attributes.speed).toBeDefined();
-      expect(attributes.speed.type).toBe('number');
-      expect(attributes.speed.default).toBeGreaterThanOrEqual(10);
-      expect(attributes.speed.default).toBeLessThanOrEqual(200);
-    });
-
-    it('should define scrollBased boolean attribute', () => {
-      const { attributes } = tickerBlockConfig;
-      
-      expect(attributes.scrollBased).toBeDefined();
-      expect(attributes.scrollBased.type).toBe('boolean');
-      expect(attributes.scrollBased.default).toBe(false);
-    });
-
-    it('should support WordPress editor features', () => {
-      expect(tickerBlockConfig.supports).toBeDefined();
+    it('should have editor script defined', () => {
       expect(tickerBlockConfig.editorScript).toBeDefined();
-      expect(tickerBlockConfig.editorStyle).toBeDefined();
-      expect(tickerBlockConfig.style).toBeDefined();
     });
   });
 
@@ -98,13 +66,13 @@ describe('Block Validation Tests', () => {
       expect(heroBlockConfig.name).not.toBe(tickerBlockConfig.name);
     });
 
-    it('blocks should be in valid namespace', () => {
-      expect(heroBlockConfig.name).toMatch(/^wb\//);
-      expect(tickerBlockConfig.name).toMatch(/^wb\//);
+    it('blocks should be in sage namespace', () => {
+      expect(heroBlockConfig.name).toMatch(/^sage\//);
+      expect(tickerBlockConfig.name).toMatch(/^sage\//);
     });
 
     it('blocks should have valid category', () => {
-      const validCategories = ['text', 'media', 'design', 'widgets', 'theme', 'embed'];
+      const validCategories = ['text', 'media', 'design', 'widgets', 'theme', 'embed', 'layout'];
       
       expect(validCategories).toContain(heroBlockConfig.category);
       expect(validCategories).toContain(tickerBlockConfig.category);

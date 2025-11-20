@@ -35,6 +35,7 @@
     "@roots/sage": "6.20.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
+    "@vitejs/plugin-react": "^5.1.1",
     "@wordpress/scripts": "^31.0.0",
     "lighthousebot": "^1.0.0",
     "vitest": "^4.0.12"
