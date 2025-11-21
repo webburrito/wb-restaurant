@@ -62,7 +62,7 @@
 
 @layer components {
   /* WordPress Core Blocks */
-  
+
   /* Container blocks */
   .wp-block-group,
   .wp-block-cover {
@@ -274,36 +274,31 @@
 }
 
 /* Custom Navigation Styles */
-.menu-main-container {
-  @apply flex flex-row w-full;
-}
-
-.menu-main-container ul {
-  @apply flex flex-row gap-14;
-}
-
-.menu-main-container ul li a:hover:after {
-  content: '';
-  @apply block w-[52%] h-[3px] bg-black mt-2 transition-all duration-300;
-}
-
-.menu-main-container ul li.current_page_item a:after {
-  content: '';
-  @apply block w-[52%] h-[3px] bg-black mt-2;
-}
-
-.menu-main-container ul li a {
-  @apply no-underline text-black text-lg font-medium uppercase;
-}
-
-.menu-main-container ul li a:after {
-  content: '';
-  @apply block w-0 h-[3px] bg-black mt-2 transition-all duration-300;
-}
-
 .nav-primary {
-  @apply w-auto flex min-w-[500px] pt-24;
+  @apply flex w-auto min-w-[500px] pt-12;
 }
+
+.menu-primary-container {
+  @apply flex w-full justify-end;
+}
+
+.menu-primary-container ul {
+  @apply flex gap-8;
+}
+
+.menu-primary-container ul li {
+  @apply flex;
+}
+
+.menu-primary-container ul li a {
+  @apply flex uppercase text-lg font-medium text-slate-800 relative;
+}
+
+.menu-primary-container ul li a:hover:after {
+  content: "";
+  @apply bg-slate-900 w-1/2 h-[1px] absolute -bottom-2 transition-all;
+}
+
 
 footer {
   @apply max-w-screen-xl mx-auto py-12;

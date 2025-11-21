@@ -6,7 +6,10 @@
  *
  * @type {import('@roots/bud').Config}
  */
+import sage from '@roots/sage';
+
 export default async (app) => {
+  app.use(sage);
   /**
    * Application assets & entrypoints
    *
@@ -23,7 +26,7 @@ export default async (app) => {
    *
    * @see {@link https://bud.js.org/reference/bud.setPublicPath}
    */
-  app.setPublicPath('/app/themes/sage/public/');
+  app.setPublicPath('/app/themes/wb-restaurant/public/');
 
   /**
    * Development server settings

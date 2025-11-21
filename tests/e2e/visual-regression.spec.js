@@ -1,16 +1,34 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Visual Regression Tests', () => {
+  // Helper to pause all animations
+  const pauseAnimations = async (page) => {
+    await page.evaluate(() => {
+      // Pause GSAP animations
+      if (window.gsap) {
+        window.gsap.globalTimeline.pause();
+      }
+      
+      // Pause ticker animations specifically
+      document.querySelectorAll('.ticker__track').forEach(track => {
+        track.style.animation = 'none';
+        track.style.transform = 'translateX(0)';
+      });
+    });
+  };
+
   test('homepage should match screenshot', async ({ page }) => {
     await page.goto('/');
     await page.waitForLoadState('networkidle');
     
-    // Wait for animations to settle
-    await page.waitForTimeout(1000);
+    // Pause all animations
+    await pauseAnimations(page);
+    await page.waitForTimeout(500);
     
     await expect(page).toHaveScreenshot('homepage.png', {
       fullPage: true,
       maxDiffPixels: 100,
+      animations: 'disabled',
     });
   });
 
@@ -23,6 +41,7 @@ test.describe('Visual Regression Tests', () => {
     
     await expect(hero).toHaveScreenshot('hero-block.png', {
       maxDiffPixels: 50,
+      animations: 'disabled',
     });
   });
 
@@ -33,15 +52,24 @@ test.describe('Visual Regression Tests', () => {
     const ticker = page.locator('.ticker').first();
     await expect(ticker).toBeVisible();
     
-    // Pause animation for consistent screenshot
+    // Pause GSAP and set fixed position
     await page.evaluate(() => {
+      if (window.gsap) {
+        window.gsap.globalTimeline.pause();
+      }
       document.querySelectorAll('.ticker__track').forEach(track => {
-        track.style.animationPlayState = 'paused';
+        track.style.animation = 'none';
+        // Set to known position
+        const transform = window.getComputedStyle(track).transform;
+        track.style.transform = 'translateX(0px) translateY(0px)';
       });
     });
     
+    await page.waitForTimeout(300);
+    
     await expect(ticker).toHaveScreenshot('ticker-block.png', {
       maxDiffPixels: 50,
+      animations: 'disabled',
     });
   });
 
@@ -49,11 +77,14 @@ test.describe('Visual Regression Tests', () => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000);
+    
+    await pauseAnimations(page);
+    await page.waitForTimeout(500);
     
     await expect(page).toHaveScreenshot('mobile-homepage.png', {
       fullPage: true,
       maxDiffPixels: 100,
+      animations: 'disabled',
     });
   });
 
@@ -61,11 +92,14 @@ test.describe('Visual Regression Tests', () => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000);
+    
+    await pauseAnimations(page);
+    await page.waitForTimeout(500);
     
     await expect(page).toHaveScreenshot('tablet-homepage.png', {
       fullPage: true,
       maxDiffPixels: 100,
+      animations: 'disabled',
     });
   });
 

@@ -29,17 +29,28 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.11.0",
     "@playwright/test": "^1.56.1",
-    "@roots/bud": "6.20.0",
-    "@roots/bud-sass": "6.20.0",
-    "@roots/bud-tailwindcss": "6.20.0",
-    "@roots/sage": "6.20.0",
-    "@testing-library/jest-dom": "^6.6.3",
+    "@roots/bud": "6.24.0",
+    "@roots/bud-api": "6.24.0",
+    "@roots/bud-build": "6.24.0",
+    "@roots/bud-cache": "6.24.0",
+    "@roots/bud-compiler": "6.24.0",
+    "@roots/bud-dashboard": "6.24.0",
+    "@roots/bud-extensions": "6.24.0",
+    "@roots/bud-framework": "6.24.0",
+    "@roots/bud-hooks": "6.24.0",
+    "@roots/bud-sass": "6.24.0",
+    "@roots/bud-server": "6.24.0",
+    "@roots/bud-tailwindcss": "6.24.0",
+    "@roots/sage": "6.24.0",
+    "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@vitejs/plugin-react": "^5.1.1",
+    "@wordpress/scripts": "^31.0.0",
+    "lighthousebot": "^1.0.0",
     "vitest": "^4.0.12"
   },
   "dependencies": {
     "gsap": "^3.13.0"
   },
-  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
+  "packageManager": "pnpm@9.12.1"
 }
