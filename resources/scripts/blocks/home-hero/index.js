@@ -14,6 +14,8 @@ registerBlockType('sage/home-hero', {
     motif: { type: 'string', source: 'html', selector: 'span' },
     heading: { type: 'string', source: 'html', selector: 'h1' },
     subheading: { type: 'string', source: 'html', selector: 'p' },
+    small_text_header: { type: 'string', source: 'html', selector: '.flex span:first-child' },
+    small_text_body: { type: 'string', source: 'html', selector: '.flex span:last-child' },
   },
   edit: Edit,
   save: Save,

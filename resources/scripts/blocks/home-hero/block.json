@@ -8,6 +8,8 @@
   "attributes": {
     "heading": { "type": "string", "source": "html", "selector": "h1" },
     "subheading": { "type": "string", "source": "html", "selector": "p" },
-    "motif": { "type": "string", "default": "" }
+    motif: { "type": "string", "default": "" },
+    small_text_heading: { "type": "string", "source": "html" },
+    small_text_body: { "type": "string", "source": "html" }
   }
 }

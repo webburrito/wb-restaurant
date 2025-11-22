@@ -1,14 +1,11 @@
 import {
   useBlockProps,
   RichText,
-  MediaUpload,
-  InspectorControls,
 } from '@wordpress/block-editor';
-import { Button, PanelBody } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 
 export default function Edit({ attributes, setAttributes }) {
-  const { heading, subheading, motif } = attributes;
+  const { heading, subheading, motif, small_text_header, small_text_body } = attributes;
   const blockProps = useBlockProps({
     className: 'home-hero',
   });
@@ -40,6 +37,11 @@ export default function Edit({ attributes, setAttributes }) {
                 placeholder="Enter hero subheading..."
             />
           </div>
+        </div>
+
+        <div className="flex">
+          <span className="">{small_text_header}</span>
+          <span>{small_text_body}</span>
         </div>
       </div>
     </Fragment>

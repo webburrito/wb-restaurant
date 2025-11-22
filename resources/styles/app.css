@@ -118,6 +118,43 @@
 }
 
 @layer components {
+  /* Forms */
+  form {
+    @apply max-w-screen-md mx-auto bg-cream p-8 rounded;
+  }
+
+  label {
+    @apply block mb-2 font-medium text-text;
+  }
+
+  input,
+  textarea,
+  select {
+    @apply w-full px-4 py-2 mb-4 border border-gray-medium rounded bg-white text-text focus:outline-none focus:border-primary transition-colors duration-300;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply border-primary shadow-crisp;
+  }
+
+  input[disabled],
+  textarea[disabled],
+  select[disabled] {
+    @apply bg-gray-light text-gray-medium cursor-not-allowed;
+  }
+
+  button[type="submit"],
+  input[type="submit"] {
+    @apply px-8 py-3 bg-primary text-white font-semibold uppercase rounded transition-colors duration-300 shadow-natural;
+  }
+
+  button[type="submit"]:hover,
+  input[type="submit"]:hover {
+    @apply bg-red-dark;
+  }
+
   /* WordPress Core Blocks */
 
   /* Container blocks */
@@ -360,3 +397,13 @@
 footer {
   @apply max-w-screen-xl mx-auto py-12;
 }
+
+/* Custom shadow utility for Tailwind compatibility */
+.shadow-natural {
+  box-shadow: var(--wp--preset--shadow--natural);
+}
+.shadow-crisp {
+  box-shadow: var(--wp--preset--shadow--crisp);
+}
+
+
