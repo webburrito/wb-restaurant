@@ -24,7 +24,7 @@
     text-transform: uppercase;
     color: #22B0D6;
     letter-spacing: 13%;
-    
+
     &.ticker__text-2 {
         color: #DF391C;
     }
@@ -38,13 +38,13 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .ticker__text {
-    font-size: 14px;
+    font-size: 56px;
   }
-  
+
   .ticker__track {
     gap: 40px;
   }
-  
+
   .ticker__text:not(:last-child) {
     margin-right: 40px;
   }

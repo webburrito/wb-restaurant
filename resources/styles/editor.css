@@ -68,7 +68,7 @@
 
 @layer components {
   /* WordPress Core Blocks in Editor */
-  
+
   .editor-styles-wrapper .wp-block-heading {
     @apply max-w-screen-xl mx-auto font-bold uppercase;
     letter-spacing: 0.13em;
@@ -100,5 +100,9 @@
 
   .editor-styles-wrapper .wp-block-code {
     @apply max-w-screen-xl mx-auto bg-gray-light p-4 rounded font-mono text-sm overflow-x-auto;
+  }
+
+  .wp-block-separator {
+    @apply border-primary;
   }
 }

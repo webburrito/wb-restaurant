@@ -30,16 +30,19 @@ domReady(async () => {
     name: "navigation",
     defaults: { ease: "power2.out", duration: 0.5 },
   });
-  navigationTL.from('#menu-main li a', {
+  navigationTL.from('.nav-primary li a', {
     y: -20,
     opacity: 0,
     stagger: 0.1,
     ease: 'power2.out',
     duration: 0.5,
   }, );
-  
+
   // smooth scrolling
-  if (window.innerWidth > 768) {
+if (window.innerWidth > 768) {
+  const wrapper = document.querySelector('.smooth-wrapper');
+  const content = document.querySelector('.smooth-content');
+  if (wrapper && content) {
     ScrollSmoother.create({
       wrapper: '.smooth-wrapper',
       content: '.smooth-content',
@@ -48,13 +51,14 @@ domReady(async () => {
       ignoreMobileResize: true,
     });
   }
+}
 
   // hero animation
   let heroTL = gsap.timeline({
     name: "hero",
     defaults: { ease: "power2.out", duration: 0.5 },
   });
-  heroTL.from('.home-hero__motif', { // screen swipe 
+  heroTL.from('.home-hero__motif', { // screen swipe
     y: 20,
     opacity: 0,
     ease: 'power2.out',
@@ -75,8 +79,12 @@ domReady(async () => {
     duration: 0.5,
   }, "-=0.3");
 
-  
-
+// if scrolled down then animate the header background in
+  ScrollTrigger.create({
+    start: "top -50",
+    end: 99999,
+    toggleClass: { targets: "header", className: "site-header--scrolled" },
+  });
 });
 
 /**

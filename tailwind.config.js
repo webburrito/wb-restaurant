@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} config */
 const config = {
   content: ['./app/**/*.php', './resources/**/*.{php,vue,js}'],
+  safelist: [
+    'wp-block-separator',
+    // Add other WordPress core block classes here if needed
+  ],
   theme: {
     extend: {
       colors: {
