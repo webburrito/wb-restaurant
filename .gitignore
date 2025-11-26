@@ -1,3 +1,6 @@
+.devenv/
+.devenv*
+
 /node_modules
 /vendor
 /public
