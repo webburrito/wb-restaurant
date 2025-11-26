@@ -1,4 +1,4 @@
-<header class="banner fixed top-0 left-0 right-0 z-[100] transition-colors">
+<header class="banner fixed top-0 left-0 right-0 z-[100] transition-colors pb-4">
   @if (has_nav_menu('primary_navigation'))
   <div class="container mx-auto">
     <div class="flex w-full justify-start lg:justify-end">

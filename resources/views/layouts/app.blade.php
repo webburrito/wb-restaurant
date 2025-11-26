@@ -11,6 +11,9 @@
 <body @php(body_class()) class="smooth-wrapper">
     @php(wp_body_open())
 
+
+
+
     @include('sections.header')
 
     <div id="app" class="smooth-content">

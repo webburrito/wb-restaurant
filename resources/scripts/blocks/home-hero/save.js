@@ -12,22 +12,25 @@ export default function Save({ attributes }) {
         <RichText.Content
           tagName="span"
           className="home-hero__motif"
+          dataSpeed="0.8"
           value={motif}
         />
         <div className="text-wrap">
           <RichText.Content
             tagName="h1"
+            dataSpeed="0.5"
             className="home-hero__heading"
             value={heading}
           />
           <RichText.Content
             tagName="p"
+            dataSpeed="0.8"
             className="home-hero__subheading"
             value={subheading}
           />
         </div>
       </div>
-      <div className="flex">
+      <div className="flex flex-col right-0 bottom-0 absolute">
         <span className="">{small_text_header}</span>
         <span>{small_text_body}</span>
       </div>
