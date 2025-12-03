@@ -1,7 +1,8 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function Save({ attributes }) {
-  const { heading, subheading, motif, small_text_header, small_text_body } = attributes;
+  const { heading, subheading, motif, small_text_header, small_text_body } =
+    attributes;
   const blockProps = useBlockProps.save({
     className: 'home-hero',
   });
@@ -30,9 +31,9 @@ export default function Save({ attributes }) {
           />
         </div>
       </div>
-      <div className="flex flex-col right-0 bottom-0 absolute">
-        <span className="">{small_text_header}</span>
-        <span>{small_text_body}</span>
+      <div className="flex flex-col md:right-[40px] md:bottom-0 relative md:absolute">
+        <RichText tagName="span" className="font-bold mb-[12px]" value={small_text_header} />
+        <span className="lg:max-w-[217px]">{small_text_body}</span>
       </div>
     </div>
   );

@@ -37,11 +37,12 @@ export default function Edit({ attributes, setAttributes }) {
           </div>
         </div>
 
-        <div className="flex flex-col absolute right-0 bottom-0">
+        <div className="flex flex-col md:right-[40px] md:bottom-0 relative md:absolute">
           <RichText
             tagName="span"
             value={small_text_header}
             className=""
+            allowedFormats={['core/bold']}
             onChange={(value) => setAttributes({ small_text_header: value })}
             placeholder="Enter text..."
           />
